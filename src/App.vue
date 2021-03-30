@@ -1,10 +1,13 @@
 <template>
   <v-app>
+    <v-app-bar app />
+    <v-navigation-drawer app />
     <v-main>
-      <h1>
-        hi
-      </h1>
+      <v-container fluid>
+        컨텐츠 영역
+      </v-container>
     </v-main>
+    <v-footer app />
   </v-app>
 </template>
 
