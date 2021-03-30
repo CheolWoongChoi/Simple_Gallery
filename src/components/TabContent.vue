@@ -3,11 +3,26 @@
     <v-tab-item
       v-for="item in items"
       :key="item.tab"
+      transition="false"
     >
       <v-container
         class="tab-content ma-0"
+        fluid
       >
-        {{ item.content }}
+        <v-row
+          class="tab-content-row"
+          justify="center"
+          align="center"
+        >
+          <v-col align="center">
+            <div v-if="item.type === 'text'">
+              {{ item.content }}
+            </div>
+            <div v-else-if="item.type === 'image'">
+              이미지
+            </div>
+          </v-col>
+        </v-row>
       </v-container>
     </v-tab-item>
   </v-tabs-items>
@@ -37,6 +52,10 @@ export default {
 
 	.tab-content {
 		border: $border-style;
-		height: 350px;
+		height: 375px;
+
+		.tab-content-row {
+			height: 100%;
+		}
 	}
 </style>

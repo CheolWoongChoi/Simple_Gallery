@@ -3,12 +3,12 @@
     v-model="tab"
     background-color="white"
     active-class="tabs-active"
-    slider-color="transparent"
+    hide-slider
   >
     <v-tab
       v-for="item in items"
       :key="item.tab"
-      class="tab"
+      class="tab px-10"
     >
       {{ item.tab }}
     </v-tab>

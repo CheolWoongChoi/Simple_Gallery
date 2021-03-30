@@ -7,8 +7,8 @@ export default new Vuex.Store({
   state: {
     tab: null,
     items: [
-      { tab: 'One', content: '안녕하세요. 홍길동입니다.' },
-      { tab: 'Two', content: 'Tab 2 Content' },
+      { tab: '메뉴1', type: 'text', content: '안녕하세요. 홍길동입니다.' },
+      { tab: '메뉴2', type: 'image', content: 'Tab 2 Content' },
     ]
   },
   mutations: {
