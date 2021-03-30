@@ -1,29 +1,41 @@
 <template>
   <v-app>
-    <v-app-bar app />
-    <v-navigation-drawer app />
     <v-main>
-      <v-container fluid>
-        컨텐츠 영역
+      <v-container class="container">
+        <v-row
+          class="row"
+          justify="center"
+          align="center"
+        >
+          <v-col cols="6">
+            <Tab />
+            <TabContent />
+          </v-col>
+        </v-row>
       </v-container>
     </v-main>
-    <v-footer app />
   </v-app>
 </template>
 
 <script>
+import Tab from '@/components/Tab.vue';
+import TabContent from '@/components/TabContent.vue';
+
 export default {
   name: 'App',
-  data() {
-    return {
-
-    }
-  },
+  components: {
+    Tab,
+    TabContent
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-  h1 {
-    color: red;
+  .container {
+    height: 100vh;
+
+    .row {
+      height: 100%;
+    }
   }
 </style>
