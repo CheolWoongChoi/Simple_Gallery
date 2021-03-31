@@ -25,7 +25,7 @@ import Texts from '@/components/Texts';
 import Images from '@/components/Images';
 
 export default {
-  name: 'TabContent',
+  name: 'TabContents',
   components: {
     Texts,
     Images

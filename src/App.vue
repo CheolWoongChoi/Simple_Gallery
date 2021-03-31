@@ -12,7 +12,7 @@
             xl="6"
           >
             <Tab />
-            <TabContent />
+            <TabContents />
           </v-col>
         </v-row>
       </v-container>
@@ -22,13 +22,13 @@
 
 <script>
 import Tab from '@/components/Tab.vue';
-import TabContent from '@/components/TabContent.vue';
+import TabContents from '@/components/TabContents.vue';
 
 export default {
   name: 'App',
   components: {
     Tab,
-    TabContent
+    TabContents
   }
 };
 </script>
