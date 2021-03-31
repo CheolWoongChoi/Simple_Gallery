@@ -28,37 +28,42 @@
       </template>
     </v-snackbar>
     <!-- Images -->
-    <v-col
-      cols="12"
-      align-self="center"
+    <v-row
+      justify="center"
+      align="center"
     >
-      <v-row
-        class="ma-0 px-12"
-        justify="space-around"
-        align="center"
+      <v-col
+        cols="12"
+        align-self="center"
       >
-        <img
-          v-for="({ name, url }, idx) in topImgs"
-          :key="name"
-          class="img"
-          :src="url"
-          @click="galleryIdx = idx"
+        <v-row
+          class="ma-0 px-12"
+          justify="space-around"
+          align="center"
         >
-      </v-row>
-      <v-row
-        class="ma-0 px-12"
-        justify="space-around"
-        align="center"
-      >
-        <img
-          v-for="({ name, url }, idx) in bottomImgs"
-          :key="name"
-          class="img"
-          :src="url"
-          @click="galleryIdx = 3+idx"
+          <img
+            v-for="({ name, url }, idx) in topImgs"
+            :key="name"
+            class="img"
+            :src="url"
+            @click="galleryIdx = idx"
+          >
+        </v-row>
+        <v-row
+          class="ma-0 px-12"
+          justify="space-around"
+          align="center"
         >
-      </v-row>
-    </v-col>
+          <img
+            v-for="({ name, url }, idx) in bottomImgs"
+            :key="name"
+            class="img"
+            :src="url"
+            @click="galleryIdx = 3+idx"
+          >
+        </v-row>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -100,7 +105,6 @@ export default {
       const { classList } = e.target;
 
       if (classList.contains('imgs-wrap') || classList.contains('row')) {
-        console.log('Is background');
         this.snackbarState = true;
       }
     }
@@ -114,7 +118,7 @@ export default {
   height: 100%;
 
   .row {
-		&:last-child {
+		&:nth-child(2) {
 			margin-top: 25px !important;
 		}
 
