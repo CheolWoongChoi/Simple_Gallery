@@ -25,7 +25,7 @@ npm start : 패키지를 설치하고 개발서버를 통해 어플리케이션�
 - Vuetify
 - Vuex
 - Vue-gallery
-- Scss
+- Sass(Scss)
 
 <br />
 
