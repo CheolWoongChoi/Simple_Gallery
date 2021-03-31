@@ -1,6 +1,6 @@
 <template>
   <v-row
-    class="ma-0 texts"
+    class="ma-0 texts-wrap"
     justify="center"
     align="center"
   >
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'Images',
+  name: 'Texts',
   props: {
     contents: {
       type: String,
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	.texts {
+	.texts-wrap {
 		height: 100%;
 	}
 </style>

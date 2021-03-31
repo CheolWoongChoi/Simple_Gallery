@@ -3,11 +3,31 @@
     class="imgs-wrap"
     @click="handleBackgroundClick"
   >
+    <!-- Helper Components -->
     <gallery
       :images="imgUrls"
       :index="galleryIdx"
       @close="galleryIdx = null"
     />
+    <v-snackbar
+      v-model="snackbarState"
+      :timeout="snackbarTimeout"
+      multi-line="true"
+    >
+      {{ snackbarText }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="blue"
+          text
+          v-bind="attrs"
+          @click="snackbarState = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
+    <!-- Images -->
     <v-col
       cols="12"
       align-self="center"
@@ -59,6 +79,9 @@ export default {
   data() {
     return {
       galleryIdx: null,
+      snackbarState: false,
+      snackbarText: '바탕화면이 아닌 이미지를 누르세요',
+      snackbarTimeout: 3000
     };
   },
   computed: {
@@ -74,8 +97,12 @@ export default {
   },
   methods: {
     handleBackgroundClick(e) {
-      console.log(e.target);
-      console.log('hi')
+      const { classList } = e.target;
+
+      if (classList.contains('imgs-wrap') || classList.contains('row')) {
+        console.log('Is background');
+        this.snackbarState = true;
+      }
     }
   }
 };
@@ -93,6 +120,7 @@ export default {
 
     .img {
       max-width: 20%;
+      cursor: pointer;
     }
   }
 }
