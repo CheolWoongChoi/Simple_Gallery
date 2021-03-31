@@ -6,31 +6,30 @@
       transition="false"
     >
       <v-container
-        class="tab-content ma-0"
+        class="tab-content ma-0 pa-0"
         fluid
       >
-        <v-row
-          class="tab-content-row"
-          justify="center"
-          align="center"
-        >
-          <v-col align="center">
-            <div v-if="item.type === 'text'">
-              {{ item.content }}
-            </div>
-            <div v-else-if="item.type === 'image'">
-              이미지
-            </div>
-          </v-col>
-        </v-row>
+        <template v-if="item.type === 'text'">
+          <Texts :contents="item.contents" />
+        </template>
+        <template v-else-if="item.type === 'image'">
+          <Images :contents="item.contents" />
+        </template>
       </v-container>
     </v-tab-item>
   </v-tabs-items>
 </template>
 
 <script>
+import Texts from '@/components/Texts';
+import Images from '@/components/Images';
+
 export default {
   name: 'TabContent',
+  components: {
+    Texts,
+    Images
+  },
   computed: {
     tab: {
       get() {

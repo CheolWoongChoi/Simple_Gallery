@@ -7,7 +7,10 @@
           justify="center"
           align="center"
         >
-          <v-col cols="6">
+          <v-col
+            cols="8"
+            xl="6"
+          >
             <Tab />
             <TabContent />
           </v-col>
